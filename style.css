@@ -1,7 +1,8 @@
 body {
     background-image: url('images/bg.jpg');
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -27,18 +28,21 @@ body {
     font-family:Tahoma;
     padding:12px;
     border-radius:12px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     bottom:5%;
     right:50%;
     position: fixed;
 }
 
 #zombie {
+    top:20%;
+    left:20%;
     position: absolute;
     width:100px;
 }
 
 #pixie{
+    top:20%;
+    right:30%;
     position: absolute;
     width:70px;
 }

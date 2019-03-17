@@ -18,10 +18,17 @@
 
     <script>
         a = 0;
-        function runEverything() {
+        function runZombie() {
             displayScore();
             moveZombie();
             killZombie();
+            playSound();
+        }
+        
+        function runPixie() {
+            displayScore();
+            movePixie();
+            killPixie();
             playSound();
         }
 
@@ -32,6 +39,7 @@
         function resetScore() {
             document.getElementById('counter').innerHTML = a = 0;
             document.getElementById('zombie').style = "position:absolute";
+            document.getElementById('pixie').style = "position:absolute";
         }
 
         function displayScore() {
@@ -58,9 +66,15 @@
             document.getElementById('zombie').src= "images/explosion.gif"
             setTimeout(moveZombie, 500);
         }
+        
+        function killPixie() {
+            document.getElementById('pixie').src= "images/explosion.gif"
+            setTimeout(movePixie, 500);
+        }
         setInterval(moveZombie, 2000)
         setInterval(movePixie, 2050)
-        document.getElementById('zombie').onclick = runEverything;
+        document.getElementById('zombie').onclick = runZombie;
+        document.getElementById('pixie').onclick = runPixie;
         document.getElementById('gameover').onclick = resetScore;
     </script>    
 </body>
