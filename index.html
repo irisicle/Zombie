@@ -20,22 +20,26 @@
         a = 0;
         function runZombie() {
             displayScore();
-            moveZombie();
             killZombie();
             playSound();
         }
         
         function runPixie() {
             displayScore();
-            movePixie();
             killPixie();
-            playSound();
+            playSound2();
         }
 
         function playSound() {
-            let sound = new Audio("scream2.mp3");
+            let sound = new Audio("scream.mp3");
             sound.play();
         }
+        
+        function playSound2() {
+            let sound2 = new Audio("scream2.mp3");
+            sound2.play();
+        }
+
         function resetScore() {
             document.getElementById('counter').innerHTML = a = 0;
             document.getElementById('zombie').style = "position:absolute";
@@ -55,8 +59,8 @@
         }
 
         function movePixie() {
-            x = window.innerWidth - 100;
-            y = window.innerHeight - 100;
+            x = window.innerWidth - 70;
+            y = window.innerHeight - 70;
             document.getElementById('pixie').src = "images/pixie.png";
             document.getElementById('pixie').style.bottom = Math.random() * y + 'px';
             document.getElementById('pixie').style.right = Math.random() * x + 'px';
@@ -64,15 +68,15 @@
         
         function killZombie() {
             document.getElementById('zombie').src= "images/explosion.gif"
-            setTimeout(moveZombie, 500);
         }
         
         function killPixie() {
             document.getElementById('pixie').src= "images/explosion.gif"
-            setTimeout(movePixie, 500);
         }
+
         setInterval(moveZombie, 2000)
-        setInterval(movePixie, 2050)
+        setInterval(movePixie, 1950)
+
         document.getElementById('zombie').onclick = runZombie;
         document.getElementById('pixie').onclick = runPixie;
         document.getElementById('gameover').onclick = resetScore;
