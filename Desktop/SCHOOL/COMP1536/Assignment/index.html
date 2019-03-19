@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZOMBIE HUNTER</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+    
+<body>
+    <h1 id="score">Score</h1>
+    <h1 id="counter">0</h1>
+    <button id="gameover">END GAME</button>
+    
+    <img id="zombie" src="images/bean.png">
+    <img id="pixie" src="images/pixie.png">  
+
+    <script>
+        let a = 0;
+        function runZombie() {
+            displayScore();
+            killZombie();
+            playSound();
+        }
+        
+        function runPixie() {
+            displayScore();
+            killPixie();
+            playSound2();
+        }
+
+        function playSound() {
+            let sound = new Audio("scream.mp3");
+            sound.play();
+        }
+        
+        function playSound2() {
+            let sound2 = new Audio("scream2.mp3");
+            sound2.play();
+        }
+
+        function resetScore() {
+            document.getElementById('counter').innerHTML = a = 0;
+            document.getElementById('zombie').style = "position:absolute";
+            document.getElementById('pixie').style = "position:absolute";
+        }
+
+        function displayScore() {
+            document.getElementById('counter').innerHTML = (a += 1); 
+        }
+
+        function moveZombie() {
+            x = window.innerWidth - 100;
+            y = window.innerHeight - 100;
+            document.getElementById('zombie').src = "images/bean.png";
+            document.getElementById('zombie').style.top = Math.random() * y + 'px';
+            document.getElementById('zombie').style.left = Math.random() * x + 'px';
+        }
+
+        function movePixie() {
+            x = window.innerWidth - 70;
+            y = window.innerHeight - 70;
+            document.getElementById('pixie').src = "images/pixie.png";
+            document.getElementById('pixie').style.bottom = Math.random() * y + 'px';
+            document.getElementById('pixie').style.right = Math.random() * x + 'px';
+        }
+        
+        function killZombie() {
+            document.getElementById('zombie').src= "images/explosion.gif"
+        }
+        
+        function killPixie() {
+            document.getElementById('pixie').src= "images/explosion.gif"
+        }
+
+        setInterval(moveZombie, 2000)
+        setInterval(movePixie, 2100)
+
+        document.getElementById('zombie').onclick = runZombie;
+        document.getElementById('pixie').onclick = runPixie;
+        document.getElementById('gameover').onclick = resetScore;
+    </script>    
+</body>
+</html>
