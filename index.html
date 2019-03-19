@@ -17,7 +17,7 @@
     <img id="pixie" src="images/pixie.png">  
 
     <script>
-        a = 0;
+        let a = 0;
         function runZombie() {
             displayScore();
             killZombie();
@@ -75,7 +75,7 @@
         }
 
         setInterval(moveZombie, 2000)
-        setInterval(movePixie, 1950)
+        setInterval(movePixie, 2100)
 
         document.getElementById('zombie').onclick = runZombie;
         document.getElementById('pixie').onclick = runPixie;
