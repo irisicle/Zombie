@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>My Website</title>
+
+        <script>
+            for( let i=0; i<=10; ++i){
+                console.log(i);
+            }
+        </script>
+        <script>
+            for( let i=10; i>=0; --i){
+                console.log(i);
+            }
+        </script>
+
+            <style>
+                body {
+                    background-color: rgb(238, 231, 233);
+                }
+                .aa { background-color:pink; }
+                .bb { background-color: lightsteelblue; }
+                .cc { background-color: rgb(228, 210, 184); }
+                .dd { background-color: rgb(170, 202, 170); }
+                .ee { background-color: pink; }
+                .ff { background-color: lightsteelblue; }
+                .gg { background-color: rgb(235, 190, 208); }
+
+                a:link, a:visited { 
+                    text-decoration: none;
+                    display: inline-block;
+                    color: black; 
+
+                }
+
+                div {padding-top: 10px;
+                    padding-right: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+                    max-width: 1000px;
+                    margin: auto;
+                    position: relative;
+                    overflow: hidden;
+                    float: none;
+                    text-align: center;
+        
+                }
+        
+            </style>
+    </head>
+
+    <body>
+            <script>
+
+                    function generateButton(num) {
+                        for(let i = 0; i < num; i++) {
+                            let button = document.createElement("button");
+                            button.innerHTML = String.fromCharCode(65 + i);
+                            document.body.appendChild(button);
+                            button.onclick = function(){console.log("Button " + String.fromCharCode(65 + i) + " was clicked!");
+                            }
+                        }
+                    }
+                    generateButton(26);
+                
+                </script>
+        <h1>Welcome!</h1>
+        <h3>I'm Iris.</h3> I was born and raised in Vancouver and graduated high school at Eric Hamber Secondary. After high school, I went to Langara College to study psychology for about a year and 
+            realized it wasn't right for me; therefore, I chose the CST program at BCIT to pursue my interest in game development because I love playing video games. I look forward to learn more about programming and the challenges I will be facing in this intensive program.
+        </p>
+        <img src="images/IMG_9168.JPG" width=250>
+        <p>This Winter 2019, I'm currently taking,</p>
+        <ul>
+            <div class="aa"><a href="https://www.bcit.ca/study/outlines/20191086130">• COMP1712<p>This course offers the study of concepts, processes and tools that professionals use to plan and develop information systems to industry standards.</p></a></div><br>
+            <div class="bb"><a href="https://www.bcit.ca/study/outlines/20191086129">• COMP1536<p> This course is a web design and programming course with an emphasis on good planning, interface design, multimedia, client-side scripting with JavaScript, server-side scripting, and best practices.</p></a></div><br>
+            <div class="cc"><a href="https://www.bcit.ca/study/outlines/20191086126">• COMP1510<p>This is a hands-on course introduces the fundamental concepts of programming including design, development, testing, debugging simple programs, as well as error-handling, and problem solving.</p></a></div><br>
+            <div class="dd"><a href="https://www.bcit.ca/study/outlines/20191086120">• COMP1116<p>This course will teach you how to write professionally and efficiently in a workplace environment.</p></div></a><br>
+            <div class="ee"><a href="https://www.bcit.ca/study/outlines/20191086123">• COMP1113<p>This course provides an introduction to discrete mathemathics and linear equations.</p></div></a><br>
+            <div class="ff"><a href="https://www.bcit.ca/study/outlines/20191086121">• COMP1100<p>This course covers topics of importance to new and continuing students on how to balance school and related activities to enhance chances of success in their academic careers.</p></div></a><br>
+            <div class="gg"><a href="https://www.bcit.ca/study/outlines/20191086134">• COMP1930<p>This course takes students through the UX design process which includes creating and administering surveys & interviews, creating personas and user stories, designing wireframes, and performing user tests with a developed implementation.</p></div></a><br>
+        </ul>
+    
+        <a href="https://www.bcit.ca"><img src="images/bcit.png" width="100"></a> 
+        <a href="https://www.cartoonstock.com/directory/c/computer_science.asp"><img src="images/cs.jpg" width="100"></a>
+        <a href="resume.html">Resume</a>
+
+    </body>
+
+</html>
